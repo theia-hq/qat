@@ -8,6 +8,9 @@ both there and not. You dial it, and the observation collapses it into one defin
 the session and it returns to the box, unobserved. (The `q` is quantum; the rest is cat.)
 
 ## Get yours
+**Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop — `mint` and `ssh` are
+swoosh commands (grab a binary from its [releases](https://github.com/theia-hq/swoosh/releases)).
+
 Click **Use this template** above (or `gh repo create <you>/qat --template theia-hq/qat`), then:
 
 ```sh
