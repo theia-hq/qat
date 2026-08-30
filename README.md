@@ -1,22 +1,21 @@
-# erwin
+# qat
 
-A template for an on-demand machine you `swoosh ssh` into — by membership, across GitHub's NAT, with no
-SSH keys and no standing VM. Scale-to-zero: nothing runs (and nothing bills) until you dial it.
+A scale-to-zero box you `swoosh ssh` into — dormant until you dial it, one running machine while you're
+in, gone when you leave. Across GitHub's NAT, by membership, with no SSH keys and no standing VM.
 
-**The name.** *erwin* is the experiment — Erwin Schrödinger's apparatus. Adopt this template and *you* are
-Erwin, the experimenter. Each box it spins up is a **qat** (**q**uantum c**at**): idle, it's in
-superposition — neither running nor not; you dial it, and the observation collapses it into one definite,
-running machine. Close the session and it returns to the box, unobserved.
+**The name.** *qat* is Schrödinger's box. Idle, it's in superposition — nothing running, nothing billing,
+both there and not. You dial it, and the observation collapses it into one definite, running machine; close
+the session and it returns to the box, unobserved. (The `q` is quantum; the rest is cat.)
 
 ## Get yours
-Click **Use this template** above (or `gh repo create <you>/qat --template theia-hq/erwin`), then:
+Click **Use this template** above (or `gh repo create <you>/qat --template theia-hq/qat`), then:
 
 ```sh
 swoosh mint qat                                       # authkey + records the contact me/qat
 gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the authkey
 gh workflow run debug-ssh.yml --repo <you>/qat -f minutes=60
 # once the run logs "reachable over the overlay", from your laptop:
-swoosh ssh me/qat                                     # shell into your cat
+swoosh ssh me/qat                                     # observe the cat
 ```
 
 ## Teardown
