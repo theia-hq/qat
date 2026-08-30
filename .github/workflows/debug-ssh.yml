@@ -1,0 +1,21 @@
+# Spin up an on-demand box you can `swoosh ssh` into, by membership, across GitHub's NAT.
+# Trigger: `gh workflow run debug-ssh.yml`, then `swoosh ssh me/ci-runner` from your laptop.
+# The runner is scale-to-zero: nothing runs (and nothing bills) until you dispatch this.
+name: debug-ssh
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: how long to hold the box open
+        required: false
+        default: "30"
+
+jobs:
+  shell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 # hard ceiling; the Action holds for `minutes`, then releases
+    steps:
+      - uses: theia-hq/swoosh-action@v2
+        with:
+          authkey: ${{ secrets.THEIA_AUTHKEY }}
+          minutes: ${{ inputs.minutes }}
