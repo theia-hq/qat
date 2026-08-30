@@ -16,7 +16,7 @@ Click **Use this template** above (or `gh repo create <you>/qat --template theia
 ```sh
 swoosh mint qat                                       # authkey + records the contact me/qat
 gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the authkey
-gh workflow run debug-ssh.yml --repo <you>/qat -f minutes=60
+gh workflow run summon.yml --repo <you>/qat -f minutes=60
 # once the run logs "reachable over the overlay", from your laptop:
 swoosh ssh me/qat                                     # observe the cat
 ```

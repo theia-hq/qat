@@ -1,7 +1,7 @@
 # Spin up an on-demand box you can `swoosh ssh` into, by membership, across GitHub's NAT.
-# Trigger: `gh workflow run debug-ssh.yml`, then `swoosh ssh me/ci-runner` from your laptop.
+# Trigger: `gh workflow run summon.yml`, then `swoosh ssh me/qat` from your laptop.
 # The runner is scale-to-zero: nothing runs (and nothing bills) until you dispatch this.
-name: debug-ssh
+name: summon
 on:
   workflow_dispatch:
     inputs:
