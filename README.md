@@ -17,14 +17,22 @@ Click **Use this template** above (or `gh repo create <you>/qat --template theia
 swoosh mint qat                                       # authkey + records the contact me/qat
 gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the authkey
 gh workflow run summon.yml --repo <you>/qat -f minutes=60
-# once the run logs "reachable over the overlay", from your laptop:
+# once the run is up, from your laptop:
 swoosh ssh me/qat                                     # observe the cat
+```
+
+The box serves a keyless shell plus `fetch`/`ping`/`speed`, all behind the family gate:
+
+```sh
+swoosh ping  me/qat                # round-trip time to the box
+swoosh speed me/qat                # throughput to the box
+swoosh fetch --via me/qat <url>    # HTTP fetched by the box, streamed back
 ```
 
 ## Teardown
 The box tears itself down — and GitHub destroys the ephemeral runner, back to zero — when any of:
 - the `minutes` you set elapses (default 30), or
-- you end early: over ssh, `touch $RUNNER_TEMP/theia-release`, or
+- you end it early from your laptop: `swoosh stop me/qat`, or
 - the job hits its hard `timeout-minutes` ceiling (6h, GitHub's per-job max).
 
 ## How it works
