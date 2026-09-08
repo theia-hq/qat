@@ -1,6 +1,6 @@
 # qat
 
-A scale-to-zero box you `swoosh ssh` into — dormant until you dial it, one running machine while you're
+A scale-to-zero box you `swoosh ssh` into: dormant until you dial it, one running machine while you are
 in, gone when you leave. Across GitHub's NAT, by membership, with no SSH keys and no standing VM.
 
 **The name.** *qat* is Schrödinger's box. Idle, it's in superposition — nothing running, nothing billing,
@@ -21,6 +21,10 @@ gh workflow run summon.yml --repo <you>/qat -f minutes=60
 swoosh ssh me/qat                                     # observe the cat
 ```
 
+A minted badge lasts 90 days unless you pass `--expires`. Mint once per box, and for a
+long-lived box mint long: `swoosh mint qat --expires 365d`. See
+[`swoosh mint`](https://github.com/theia-hq/swoosh/blob/main/docs/reference/commands.md#mint).
+
 The box serves a keyless shell plus `fetch`/`ping`/`speed`, all behind the family gate:
 
 ```sh
@@ -30,7 +34,7 @@ swoosh fetch --via me/qat <url>    # HTTP fetched by the box, streamed back
 ```
 
 ## Teardown
-The box tears itself down — and GitHub destroys the ephemeral runner, back to zero — when any of:
+The box tears itself down (and GitHub destroys the ephemeral runner, back to zero) when any of:
 - the `minutes` you set elapses (default 30), or
 - you end it early from your laptop: `swoosh stop me/qat`, or
 - the job hits its hard `timeout-minutes` ceiling (6h, GitHub's per-job max).
