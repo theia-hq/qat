@@ -36,7 +36,7 @@ swoosh fetch --via me/qat <url>    # HTTP fetched by the box, streamed back
 ## Teardown
 The box tears itself down (and GitHub destroys the ephemeral runner, back to zero) when any of:
 - the `minutes` you set elapses (default 30), or
-- you end it early from your laptop: `swoosh stop me/qat`, or
+- you end it early from your laptop: `swoosh stop --at me/qat`, or
 - the job hits its hard `timeout-minutes` ceiling (6h, GitHub's per-job max).
 
 ## How it works
