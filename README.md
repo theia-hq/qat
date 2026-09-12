@@ -40,13 +40,12 @@ swoosh fetch --via me/qat <url>    # HTTP fetched by the box, streamed back
 | input | required | default | what it is |
 | ----- | -------- | ------- | ---------- |
 | `minutes` | no | `30` | how long to hold the box open. |
-| `services` | no | `ssh=sshd: fetch=fetch: ping=ping: speed=speed:` | the services to serve, space-separated `name=addr`. |
+| `services` | no | `ssh=sshd: fetch=fetch: ping=ping: speed=speed:` | the services to serve, space-separated `name=target`. |
 
 ## Teardown
 The box tears itself down (and GitHub destroys the ephemeral runner, back to zero) when any of:
 - the `minutes` you set elapses (default 30), or
-- you end it early from your laptop: `swoosh stop me/qat` (a build from `main`, newer than v0.8.0,
-  spells it `swoosh stop --at me/qat`), or
+- you end it early from your laptop: `swoosh stop --at me/qat`, or
 - the job hits its hard `timeout-minutes` ceiling (6h, GitHub's per-job max).
 
 ## How it works
