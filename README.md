@@ -33,6 +33,15 @@ swoosh speed me/qat                # throughput to the box
 swoosh fetch --via me/qat <url>    # HTTP fetched by the box, streamed back
 ```
 
+## Inputs
+
+`summon.yml` takes two inputs, passed as `-f <name>=<value>` on the `gh workflow run` line:
+
+| input | required | default | what it is |
+| ----- | -------- | ------- | ---------- |
+| `minutes` | no | `30` | how long to hold the box open. |
+| `services` | no | `ssh=sshd: fetch=fetch: ping=ping: speed=speed:` | the services to serve, space-separated `name=addr`. |
+
 ## Teardown
 The box tears itself down (and GitHub destroys the ephemeral runner, back to zero) when any of:
 - the `minutes` you set elapses (default 30), or
