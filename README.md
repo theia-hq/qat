@@ -1,11 +1,13 @@
 # qat
 
-A scale-to-zero box you `swoosh ssh` into: dormant until you dial it, one running machine while you are
-in, gone when you leave. Across GitHub's NAT, by membership, with no SSH keys and no standing VM.
+A scale-to-zero box you `swoosh ssh` into: dormant until you dispatch it, one running machine while you
+are in, gone at its timer or when you stop it. Across GitHub's NAT, by membership, with no SSH keys and no
+standing VM.
 
 **The name.** *qat* is Schrödinger's box. Idle, it's in superposition: nothing running, nothing billing,
-both there and not. You dial it, and the observation collapses it into one definite, running machine; close
-the session and it returns to the box, unobserved. (The `q` is quantum; the rest is cat.)
+both there and not. You dispatch it, and the observation collapses it into one definite, running machine;
+when the timer runs out or you stop it, it returns to the box, unobserved. (The `q` is quantum; the rest
+is cat.)
 
 ## Get yours
 **Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop. `mint` and `ssh` are
