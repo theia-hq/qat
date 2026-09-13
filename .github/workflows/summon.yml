@@ -9,10 +9,10 @@ name: summon
 on:
   workflow_dispatch:
     inputs:
-      minutes:
-        description: how long to hold the box open
+      expires:
+        description: how long to hold the box open (a duration, e.g. 30m, 2h)
         required: false
-        default: "30"
+        default: "30m"
       services:
         description: services to serve on the box (space-separated name=addr)
         required: false
@@ -21,10 +21,10 @@ on:
 jobs:
   node:
     runs-on: ubuntu-latest
-    timeout-minutes: 360 # hard ceiling; the Action holds for `minutes`, then releases
+    timeout-minutes: 360 # hard ceiling; the Action holds for `expires`, then releases
     steps:
       - uses: theia-hq/swoosh-action@v2
         with:
           authkey: ${{ secrets.THEIA_AUTHKEY }}
-          minutes: ${{ inputs.minutes }}
+          expires: ${{ inputs.expires }}
           services: ${{ inputs.services }}
