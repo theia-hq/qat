@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: theia-hq/swoosh-action@v2
         with:
-          authkey: ${{ secrets.THEIA_AUTHKEY }}
+          invite: ${{ secrets.THEIA_INVITE }}
           expires: ${{ inputs.expires }}
           services: ${{ inputs.services }}
