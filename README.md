@@ -9,6 +9,8 @@ both there and not. You dispatch it, and the observation collapses it into one d
 when the timer runs out or you stop it, it returns to the box, unobserved. (The `q` is quantum; the rest
 is cat.)
 
+This page describes the default branch.
+
 ## Get yours
 **Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop. `invite add` and `ssh` are
 swoosh commands (grab a binary from its [releases](https://github.com/theia-hq/swoosh/releases)).
