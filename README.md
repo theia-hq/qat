@@ -26,7 +26,7 @@ swoosh ssh me/qat                                     # observe the cat
 ```
 
 An invite is one-time and expires in 90 days unless you pass `--expires`. Each ephemeral runner adopts it
-on first use; once adopted, reruns use the action's `adopt --force`. See
+on first use; the action passes `adopt --force`, so a rerun re-adopts the same invite. See
 [`swoosh invite add`](https://github.com/theia-hq/swoosh/blob/main/docs/reference/commands/invite.md).
 
 The box serves a keyless shell plus `fetch`/`ping`/`speed`, all behind the family gate:
