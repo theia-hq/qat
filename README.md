@@ -10,22 +10,22 @@ when the timer runs out or you stop it, it returns to the box, unobserved. (The 
 is cat.)
 
 ## Get yours
-**Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop. `mint` and `ssh` are
+**Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop. `invite add` and `ssh` are
 swoosh commands (grab a binary from its [releases](https://github.com/theia-hq/swoosh/releases)).
 
 Click **Use this template** above (or `gh repo create <you>/qat --template theia-hq/qat`), then:
 
 ```sh
-swoosh mint qat                                       # authkey + records the contact me/qat
-gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the authkey
+swoosh invite add qat                                 # one-time invite line + records the contact me/qat
+gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the invite line
 gh workflow run summon.yml --repo <you>/qat -f expires=1h
 # once the run is up, from your laptop:
 swoosh ssh me/qat                                     # observe the cat
 ```
 
-A minted badge lasts 90 days unless you pass `--expires`. Mint once per box, and for a
-long-lived box mint long: `swoosh mint qat --expires 365d`. See
-[`swoosh mint`](https://github.com/theia-hq/swoosh/blob/main/docs/reference/commands.md#mint).
+An invite is one-time and expires in 90 days unless you pass `--expires`. Each ephemeral runner adopts it
+on first use; once adopted, reruns use the action's `adopt --force`. See
+[`swoosh invite add`](https://github.com/theia-hq/swoosh/blob/main/docs/reference/commands/invite.md).
 
 The box serves a keyless shell plus `fetch`/`ping`/`speed`, all behind the family gate:
 
