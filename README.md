@@ -19,7 +19,7 @@ Click **Use this template** above (or `gh repo create <you>/qat --template theia
 
 ```sh
 swoosh invite add qat                                 # one-time invite line + records the contact me/qat
-gh secret set THEIA_AUTHKEY --repo <you>/qat          # paste the invite line
+gh secret set THEIA_INVITE --repo <you>/qat           # paste the invite line
 gh workflow run summon.yml --repo <you>/qat -f expires=1h
 # once the run is up, from your laptop:
 swoosh ssh me/qat                                     # observe the cat
