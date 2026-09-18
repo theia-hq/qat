@@ -13,7 +13,13 @@ This page describes the default branch.
 
 ## Get yours
 **Prerequisite:** [`swoosh`](https://github.com/theia-hq/swoosh) on your laptop. `invite add` and `ssh` are
-swoosh commands (grab a binary from its [releases](https://github.com/theia-hq/swoosh/releases)).
+swoosh commands:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/theia-hq/swoosh/main/scripts/install.sh | sh
+```
+
+Or take a binary from the [releases](https://github.com/theia-hq/swoosh/releases) and verify it yourself.
 
 Click **Use this template** above (or `gh repo create <you>/qat --template theia-hq/qat`), then:
 
